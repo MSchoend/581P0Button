@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Button.Properties
+namespace RickButton.Properties
 {
 
 
