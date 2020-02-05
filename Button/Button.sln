@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Button", "Button.csproj", "{C5CBE4F7-5419-4779-9896-6CF072D9F75D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5CBE4F7-5419-4779-9896-6CF072D9F75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5CBE4F7-5419-4779-9896-6CF072D9F75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5CBE4F7-5419-4779-9896-6CF072D9F75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5CBE4F7-5419-4779-9896-6CF072D9F75D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {290C39D0-ADF0-42BF-94B4-7B8F2C2EAD6B}
+	EndGlobalSection
+EndGlobal
