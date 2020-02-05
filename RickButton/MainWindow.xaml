@@ -6,11 +6,38 @@
         xmlns:local="clr-namespace:RickButton"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Storyboard x:Key="OnMouseLeftButtonUp1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="image1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-112"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-206"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="image1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="90"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonUp" SourceName="image">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeftButtonUp1}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
         <Image Margin="-34,-62.625,-42,-56.375" Source="garage.jpg" Stretch="Fill"/>
-        <Image Margin="10,0,651.375,10" Source="portal1.png" Stretch="Fill"/>
-        <Image Margin="201.5,51.409,365.033,0" Source="rick1.png" Stretch="Fill"/>
-        <Image Margin="164.625,-20.625,341.033,100" Source="rick2.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="image" Margin="10,0,651.375,10" Source="portal1.png" Stretch="Fill"/>
+        <Image x:Name="image2" Margin="201.5,51.409,365.033,0" Source="rick1.png" Stretch="Fill"/>
+        <Image x:Name="image1" Margin="164.625,-20.625,341.033,100" Source="rick2.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Opacity="0">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1" ScaleX="-1"/>

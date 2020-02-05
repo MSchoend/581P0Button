@@ -1,0 +1,14 @@
+C:\Users\Mark\source\repos\581P0Button\RickButton\bin\Debug\RickButton.exe.config
+C:\Users\Mark\source\repos\581P0Button\RickButton\bin\Debug\RickButton.exe
+C:\Users\Mark\source\repos\581P0Button\RickButton\bin\Debug\RickButton.pdb
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.csprojAssemblyReference.cache
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\MainWindow.g.cs
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\App.g.cs
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton_MarkupCompile.cache
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton_MarkupCompile.lref
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\MainWindow.baml
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.g.resources
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.Properties.Resources.resources
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.csproj.GenerateResource.cache
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.exe
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.pdb
