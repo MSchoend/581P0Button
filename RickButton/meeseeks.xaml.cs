@@ -23,6 +23,7 @@ namespace RickButton
         public meeseeks()
         {
             InitializeComponent();
+            
         }
     }
 }

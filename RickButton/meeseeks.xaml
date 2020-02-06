@@ -8,8 +8,6 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="meeseeks">
     <Page.Resources>
-        <Storyboard x:Key="rickPeekingIn"/>
-        <Storyboard x:Key="openPortal"/>
         <Storyboard x:Key="portalopens">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="portal">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Visible}"/>
@@ -21,6 +19,15 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:2.6" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="boxButton">
+                <EasingDoubleKeyFrame KeyTime="0" Value="126.803"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="boxButton">
+                <EasingDoubleKeyFrame KeyTime="0" Value="97.102"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rick_flying_out">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="mrMeeseeksAppear">
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="portal">
@@ -30,14 +37,15 @@
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="boxButton">
-                <EasingDoubleKeyFrame KeyTime="0" Value="90.231"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="179.031"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="-1.158"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="81.929"/>
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="boxButton">
-                <EasingDoubleKeyFrame KeyTime="0" Value="124.936"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="230.536"/>
+                <EasingDoubleKeyFrame KeyTime="0" Value="2.702"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="119.726"/>
             </DoubleAnimationUsingKeyFrames>
             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="boxButton">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="{x:Static Visibility.Visible}"/>
                 <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Hidden}"/>
             </ObjectAnimationUsingKeyFrames>
@@ -76,16 +84,12 @@
         </Storyboard>
     </Page.Resources>
     <Page.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="grid"/>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard x:Name="portalopens_BeginStoryboard" Storyboard="{StaticResource portalopens}"/>
-            <BeginStoryboard Storyboard="{StaticResource mrMeeseeksAppear}"/>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="portal">
             <BeginStoryboard x:Name="rickExits_BeginStoryboard" Storyboard="{StaticResource rickExits}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="portalGunButton">
             <BeginStoryboard x:Name="portalopens_BeginStoryboard1" Storyboard="{StaticResource portalopens}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="boxButton"/>
         <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="portal">
             <BeginStoryboard x:Name="rickExits_BeginStoryboard1" Storyboard="{StaticResource rickExits}"/>
         </EventTrigger>
@@ -96,7 +100,7 @@
         <Image x:Name="portal" Margin="0,-0.082,666.837,10" Source="portal1.png" Stretch="Fill" RenderTransformOrigin="1,0.5" Visibility="Hidden"/>
         <Image x:Name="mrMeeseeks" Margin="456.157,113.947,156.606,-19.085" Source="mrMeeseeks.png" Stretch="Fill" Visibility="Hidden"/>
         <Image x:Name="rick_entering" Margin="-67.095,-0.082,573.95,72.881" Source="rick2.png" Stretch="Fill" d:IsHidden="True" Visibility="Visible"/>
-        <Image x:Name="rick_flying_out" Margin="0,22.293,470.82,46" Source="rick_flying_in.png" Stretch="Fill" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="rick_flying_out" Margin="0,22.293,470.82,46" Source="rick_flying_in.png" Stretch="Fill" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -124,7 +128,7 @@
             </Image.RenderTransform>
         </Image>
         <Image x:Name="rickWaving" Margin="134.871,78.181,405.533,10" Source="rickWaving.png" Stretch="Fill" Visibility="Hidden"/>
-        <Button x:Name="boxButton"  Cursor="Arrow" Margin="273.384,223.669,486.35,192.449" RenderTransformOrigin="-0.915,-0.034">
+        <Button x:Name="boxButton"  Cursor="Arrow" Margin="395.867,321.913,363.867,94.205" RenderTransformOrigin="-0.915,-0.034">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
