@@ -12,3 +12,7 @@ C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.Propertie
 C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.csproj.GenerateResource.cache
 C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.exe
 C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\RickButton.pdb
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\meeseeks.g.cs
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\pickleRick.g.cs
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\meeseeks.baml
+C:\Users\Mark\source\repos\581P0Button\RickButton\obj\Debug\pickleRick.baml
