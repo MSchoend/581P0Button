@@ -7,20 +7,137 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="meeseeks">
+    <Page.Resources>
+        <Storyboard x:Key="rickPeekingIn"/>
+        <Storyboard x:Key="openPortal"/>
+        <Storyboard x:Key="portalopens">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="portal">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rickWaving">
+                <DiscreteObjectKeyFrame KeyTime="0:0:3" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rickInPortal">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="mrMeeseeksAppear">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="portal">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rickWaving">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="boxButton">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90.231"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="179.031"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="boxButton">
+                <EasingDoubleKeyFrame KeyTime="0" Value="124.936"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="230.536"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="boxButton">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="mrMeeseeks">
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="rickExits">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="portal">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.6" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="mrMeeseeks">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rickWaving">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="boxButton">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rick_flying_out">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.5" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rick_flying_out">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="108"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="-112.8"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rick_flying_out">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-8.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="72"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="grid"/>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard x:Name="portalopens_BeginStoryboard" Storyboard="{StaticResource portalopens}"/>
+            <BeginStoryboard Storyboard="{StaticResource mrMeeseeksAppear}"/>
+            <BeginStoryboard x:Name="rickExits_BeginStoryboard" Storyboard="{StaticResource rickExits}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="portalGunButton">
+            <BeginStoryboard x:Name="portalopens_BeginStoryboard1" Storyboard="{StaticResource portalopens}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="boxButton"/>
+        <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="portal">
+            <BeginStoryboard x:Name="rickExits_BeginStoryboard1" Storyboard="{StaticResource rickExits}"/>
+        </EventTrigger>
+    </Page.Triggers>
 
-    <Grid Margin="0,0,3.6,-4.918">
-        <Image Source="livingroom.jpg" Stretch="Fill"/>
-        <Image x:Name="portal" Margin="0,-0.082,666.837,10" Source="portal1.png" Stretch="Fill" RenderTransformOrigin="1,0.5"/>
-        <Image Margin="456.157,113.947,156.606,-19.085" Source="mrMeeseeks.png" Stretch="Fill" d:IsHidden="True"/>
-        <Image x:Name="rick_entering" Margin="0,10,506.855,62.799" Source="rick2.png" Stretch="Fill" d:IsHidden="True"/>
-        <Image x:Name="rick_flying_out" Margin="0,22.293,470.82,46" Source="rick_flying_in.png" Stretch="Fill" FlowDirection="RightToLeft" d:IsHidden="True"/>
-        <Button Cursor="Arrow" Margin="395.867,320.592,363.867,95.526">
+    <Grid x:Name="grid" Margin="0,0,3.6,-4.918">
+        <Image x:Name="livingroom" Source="livingroom.jpg" Stretch="Fill"/>
+        <Image x:Name="portal" Margin="0,-0.082,666.837,10" Source="portal1.png" Stretch="Fill" RenderTransformOrigin="1,0.5" Visibility="Hidden"/>
+        <Image x:Name="mrMeeseeks" Margin="456.157,113.947,156.606,-19.085" Source="mrMeeseeks.png" Stretch="Fill" Visibility="Hidden"/>
+        <Image x:Name="rick_entering" Margin="-67.095,-0.082,573.95,72.881" Source="rick2.png" Stretch="Fill" d:IsHidden="True" Visibility="Visible"/>
+        <Image x:Name="rick_flying_out" Margin="0,22.293,470.82,46" Source="rick_flying_in.png" Stretch="Fill" FlowDirection="RightToLeft" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="portalGunButton" Cursor="Arrow" Margin="683.4,334.8,23.2,24.118">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="portalbutton.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image x:Name="rickInPortal" Margin="22.024,115.209,635.585,159.487" Source="rickInPortal1.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="11.903"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="rickWaving" Margin="134.871,78.181,405.533,10" Source="rickWaving.png" Stretch="Fill" Visibility="Hidden"/>
+        <Button x:Name="boxButton"  Cursor="Arrow" Margin="273.384,223.669,486.35,192.449" RenderTransformOrigin="-0.915,-0.034">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="meeseeksbox.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Image Margin="683.4,334.8,23.2,24.118" Source="portalbutton.png" Stretch="Fill"/>
     </Grid>
 </Page>
