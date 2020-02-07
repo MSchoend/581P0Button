@@ -23,6 +23,7 @@ namespace RickButton
     {
         Storyboard meeseeksAnimation;
         Storyboard garageExitAnimation;
+        Storyboard lrExitAnimation;
         private MediaPlayer mediaPlayer = new MediaPlayer();
 
         public MainWindow()
@@ -31,6 +32,10 @@ namespace RickButton
 
             meeseeksAnimation = (Storyboard)Resources["MeeseeksAppears"];
             garageExitAnimation = (Storyboard)Resources["GarageExit"];
+            lrExitAnimation = (Storyboard)Resources["LRExit"];
+
+            mediaPlayer.Open(new Uri("..\\..\\sound\\hey.mp3", UriKind.Relative));
+            mediaPlayer.Play();
 
             meeseeksAnimation.Completed += (s, e) =>
             {
@@ -40,16 +45,22 @@ namespace RickButton
 
             Rick.MouseEnter += (s, e) =>
             {
-                mediaPlayer.Open(new Uri("..\\..\\sound\\im_cool_rick.mp3", UriKind.Relative));
-                mediaPlayer.Play();
-            };
-            
-            RickGarage.MouseEnter += (s, e) =>
-            {
                 mediaPlayer.Open(new Uri("..\\..\\sound\\hey.mp3", UriKind.Relative));
                 mediaPlayer.Play();
             };
-            
+
+            garageExitAnimation.Completed += (s, e) =>
+            {
+                mediaPlayer.Open(new Uri("..\\..\\sound\\im_cool_rick.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            };
+
+            lrExitAnimation.Completed += (s, e) =>
+            {
+                mediaPlayer.Open(new Uri("..\\..\\sound\\pickle.mp3", UriKind.Relative));
+                mediaPlayer.Play();
+            };
+
         }
 
         
