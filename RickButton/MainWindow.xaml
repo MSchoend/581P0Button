@@ -1,4 +1,4 @@
-﻿<Window x:Name="window" x:Class="RickButton.MainWindow"
+<Window x:Name="window" x:Class="RickButton.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -515,16 +515,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="Rick" Margin="163.967,621,391.033,-539" Source="rickWaving.png" Stretch="Fill" Opacity="0" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
         <Image x:Name="RickJump" Margin="-72,576,560,-468" Source="rick_flying_in.png" Stretch="Fill" Opacity="0" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -626,6 +616,16 @@
             </Image.RenderTransform>
         </Image>
         <Image x:Name="Meeseeks" Margin="501,438.375,104,-64.375" Source="mrMeeseeks.png" Stretch="Fill" Opacity="0" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="Rick" Margin="163.967,621,391.033,-539" Source="rickWaving.png" Stretch="Fill" Opacity="0" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
