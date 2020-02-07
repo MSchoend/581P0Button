@@ -150,5 +150,17 @@
   <ItemGroup>
     <Resource Include="test.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="therapyCouch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="simplePickleRick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pickleRickStanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pickleRickRunning.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
