@@ -455,16 +455,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="RickGarage" Margin="201.5,51.409,365.033,0" Source="rick1.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
         <Image x:Name="RickJumpGarage" Margin="164.625,-20.625,341.033,100" Source="rick2.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Opacity="0">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -565,16 +555,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="Pickel" Margin="838,60,-400,1" Source="simplePickleRick.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="70"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
         <Image x:Name="ButtonTherapy" Margin="933,528,-252,-219" Source="portalbutton.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" OpacityMask="Black">
             <Image.RenderTransform>
                 <TransformGroup>
@@ -631,6 +611,26 @@
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="RickGarage" Margin="201.5,51.409,365.033,0" Source="rick1.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="Pickel" Margin="838,60,-400,1" Source="simplePickleRick.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="70"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Image.RenderTransform>
