@@ -45,7 +45,7 @@ namespace RickButton
 
             Rick.MouseEnter += (s, e) =>
             {
-                mediaPlayer.Open(new Uri("..\\..\\sound\\hey.mp3", UriKind.Relative));
+                mediaPlayer.Open(new Uri("..\\..\\sound\\im_cool_rick.mp3", UriKind.Relative));
                 mediaPlayer.Play();
             };
 
